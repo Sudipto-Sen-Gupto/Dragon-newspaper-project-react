@@ -1,10 +1,18 @@
 import React from 'react';
-import logo from '../../assets/logo.png'
+import Header from '../../component/header/Header';
+import { Outlet } from 'react-router';
 const Homelayout = () => {
     return (
-        <div className='max-w-[1400px] mx-auto text-center my-5'>
-            <img src={logo} alt="" className='mx-auto' />
-            <h1>The Dragon newspaper</h1>
+        <div>
+          <Header></Header>
+
+          <main>
+            <section className='left_nav'></section>
+            <section className='main'> 
+                <Outlet></Outlet>
+            </section>
+            <section className='right-nav'></section>
+          </main>
         </div>
     );
 };
