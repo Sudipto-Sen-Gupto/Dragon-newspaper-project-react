@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../component/header/Header';
 import { NavLink, Outlet } from 'react-router';
+import github from "../../assets/user.png"
 import Marquee from 'react-fast-marquee';
 const Homelayout = () => {
     return (
@@ -9,16 +10,21 @@ const Homelayout = () => {
               <Header></Header>
               <section className='flex items-center text-center bg-base-300 p-4 gap-5'>
                 <p className='bg-secondary text-white p-3'>Latest</p>
-              <Marquee pauseOnHover={true} direction='right'>
+              <Marquee pauseOnHover={true} >
                 <p>Match Highlights: Germany vs Spain — as it happened   !   Match Highlights: Germany vs Spain as...</p>
               </Marquee>
               </section>
-              <section>
-                <nav>
-                  <NavLink>Home</NavLink>
-                  <NavLink>About</NavLink>
-                  <NavLink>Career</NavLink>
+              <section className='flex justify-between items-center my-10 p-3'>
+                <div className='nav-start'></div>
+                <nav className='nav-main flex gap-4 text-base-200'>
+                  <NavLink to={'/'}>Home</NavLink>
+                  <NavLink to={'about'}>About</NavLink>
+                  <NavLink to={'career'}>Career</NavLink>
                 </nav>
+                <div className='nav-end flex gap-2'>
+                  <img src={github} alt="" />
+                  <button className='btn btn-primary'>Log in</button>
+                </div>
               </section>
           </header>
          
