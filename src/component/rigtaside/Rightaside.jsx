@@ -1,6 +1,8 @@
 import React from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import Linking from '../../pages/rigth-layout/Linking';
+import Qzone from '../../pages/Qzone/Qzone';
 const Rightaside = () => {
     return (
         <div>
@@ -9,6 +11,10 @@ const Rightaside = () => {
             <button className='btn  btn-outline btn-secondary w-full'><FcGoogle size={30}/> Log in with google </button>
             <button className='btn btn-outline btn-primary w-full'> 
              <FaGithub size={30}/>  Log in with github</button>
+           </div>
+           <div>
+             <Linking></Linking>
+             <Qzone></Qzone>
            </div>
         </div>
     );
