@@ -4,7 +4,9 @@ import Homelayout from '../homelayout/Homelayout';
 import Home from '../../component/home/Home';
 import Category from '../../component/category/Category';
 import Categorynews from '../../pages/categorynews/Categorynews';
-
+import Authlayout from '../authlayout/Authlayout';
+import Login from '../../pages/login/Login';
+import Register from '../../pages/login/register/Register';
 export const router = createBrowserRouter([
     {
            path:'/',
@@ -18,7 +20,23 @@ export const router = createBrowserRouter([
                 loader:()=>fetch('/news.json'),
                 Component:Categorynews
             },
-           ]
+           ],       
+    },
+    {
+        path:'/auth',
+        Component:Authlayout,
+        children:[
+            {
+                index:true,
+                Component:Login
+            },
+            {
+                path:'register',
+                Component:Register
+            }
+         ]
+
     }
+
 ])
    

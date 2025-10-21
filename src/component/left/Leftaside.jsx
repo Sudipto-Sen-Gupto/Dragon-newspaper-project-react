@@ -3,8 +3,8 @@ import Category from '../category/Category';
 
 const Leftaside = () => {
     return (
-        <div>
-          <Suspense>
+        <div className=''>
+          <Suspense fallback={<p>Birat load</p>}>
              <Category></Category>
           </Suspense>
         </div>

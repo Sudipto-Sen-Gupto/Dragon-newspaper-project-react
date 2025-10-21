@@ -12,7 +12,7 @@ const Categorynews = () => {
         if(id=="0"){
             console.log(news);
             setKhobor(news)
-            return
+            
         }
         else if(id=="1"){
             const filterd=news.filter(f=>f.others.is_today_pick!==false);

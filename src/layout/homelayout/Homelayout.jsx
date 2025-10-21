@@ -9,7 +9,7 @@ import Rightaside from '../../component/rigtaside/Rightaside';
 const Homelayout = () => {
     return (
         <div className='max-w-[1400px] mx-auto'>
-          <header>
+          <header >
               <Header></Header>
               <Marqueee></Marqueee>
               <Navbar></Navbar>
@@ -17,16 +17,16 @@ const Homelayout = () => {
           </header>
          
 
-          <main className='grid grid-cols-12'>
+          <main className='grid grid-cols-12 '>
            
-              <aside className='left col-span-3'>
+              <aside className='left col-span-3 sticky top-5 h-fit'>
                 <Leftaside></Leftaside>
               </aside>
            
             <section className='main col-span-6'> 
                 <Outlet></Outlet>
             </section>
-            <aside className='right col-span-3'>
+            <aside className='right col-span-3 sticky top-0 h-fit'>
              <Rightaside></Rightaside>
             </aside>
           </main>
