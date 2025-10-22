@@ -39,7 +39,8 @@ export const router = createBrowserRouter([
          ]
 
     },{
-                path:'/newsDetail',
+                path:'/newsDetail/:id',
+                loader:()=>fetch('/news.json'),
                 Component:Newsdetail
             }
 
