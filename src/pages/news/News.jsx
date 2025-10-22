@@ -1,6 +1,7 @@
 import React from "react";
 import { FaEye, FaShareAlt, FaStar } from "react-icons/fa";
 import { Bookmark, BookMarked } from 'lucide-react';
+import { Link } from "react-router";
 const News = ({ data }) => {
   const {
     title,
@@ -58,7 +59,7 @@ const News = ({ data }) => {
       <p className="text-gray-600 text-sm mb-3">
         {details.slice(0, 200)}...
         <span className="text-blue-500 cursor-pointer ml-1 hover:underline">
-          Read More
+         <Link to={'/newsDetail'}> Read More</Link>
         </span>
       </p>
 
