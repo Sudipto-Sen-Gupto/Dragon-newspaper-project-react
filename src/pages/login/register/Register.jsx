@@ -35,7 +35,7 @@ const Register = () => {
           <input type="password" className="input" placeholder="Password" name='pass' />
           <input type='submit' value={'Sign up'} className="btn btn-neutral mt-4"/>
         </fieldset>
-        <h2>Have you already an account Monsieur/Madam? <Link to={'/auth'} className='text-blue-500 hover:underline'>Log In</Link></h2>
+        <h2>Have you already an account Monsieur/Madam? <Link to={'/auth/login'} className='text-blue-500 hover:underline'>Log In</Link></h2>
         </form>
       </div>
     </div>

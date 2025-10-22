@@ -8,6 +8,7 @@ import Authlayout from '../authlayout/Authlayout';
 import Login from '../../pages/login/Login';
 import Register from '../../pages/login/register/Register';
 import Newsdetail from '../../pages/Newsdetail/Newsdetail';
+import Privateroute from '../../pages/privateroute/Privateroute';
 export const router = createBrowserRouter([
     {
            path:'/',
@@ -28,11 +29,11 @@ export const router = createBrowserRouter([
         Component:Authlayout,
         children:[
             {
-                index:true,
+                path:'/auth/login',
                 Component:Login
             },
             {
-                path:'register',
+                path:'/auth/register',
                 Component:Register
             },
             
@@ -41,7 +42,9 @@ export const router = createBrowserRouter([
     },{
                 path:'/newsDetail/:id',
                 loader:()=>fetch('/news.json'),
-                Component:Newsdetail
+               element:<Privateroute>
+                <Newsdetail></Newsdetail>
+               </Privateroute>
             }
 
 ])
