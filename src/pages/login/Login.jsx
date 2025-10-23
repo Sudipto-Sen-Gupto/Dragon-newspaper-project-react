@@ -1,16 +1,21 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../component/authprovider/Authprovider';
 import { toast } from 'react-toastify';
 
 const Login = () => {
+  const location=useLocation();
+  const navigate=useNavigate();
+  console.log(location);
   const {userLogin}=use(AuthContext);
   const handleLogin=(e)=>{
         e.preventDefault();
         const email=e.target.email.value;
         const pass=e.target.pass.value;
         console.log(email,pass);
-        userLogin(email,pass).then(res=>toast("Log in to our website")).catch(err=>console.log(err))
+        userLogin(email,pass).then(res=>{toast("Log in to our website")
+          navigate(`${location.state?location.state:"/"}`)
+        }).catch(err=>console.log(err))
   }
     return (
         <div>

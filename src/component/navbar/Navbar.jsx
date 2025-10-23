@@ -23,7 +23,7 @@ const Navbar = () => {
                   <NavLink to={'career'}>Career</NavLink>
                 </nav>
                 <div className='nav-end flex gap-2'>
-                  <img src={github} alt="" />
+                  <img src={`${detail? detail.photoURL:github}`} className='w-[50px] rounded-full' alt="" />
                   {
                     detail? <button className='btn btn-primary' onClick={handleOut}>Log out</button> : <Link to={'/auth/login'}><button className='btn btn-primary' >Log in</button></Link>
                   }
