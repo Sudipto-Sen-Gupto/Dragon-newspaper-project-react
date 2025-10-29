@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../auth.init';
-import { TruckElectric } from 'lucide-react';
+
 export  const AuthContext=createContext();
 const Authprovider = ({children}) => {
   
@@ -18,13 +18,13 @@ const Authprovider = ({children}) => {
         }
     },[])
     const createUser=(email,pass)=>{
-        setLoader(TruckElectric)
+        setLoader(true)
          return   createUserWithEmailAndPassword(auth,email,pass)
           
     }
   
     const updateUser=(updateData)=>{
-            updateProfile(auth.currentUser,updateData)
+          return  updateProfile(auth.currentUser,updateData)
     }
     const userLogin=(email,pass)=>{
         setLoader(true)

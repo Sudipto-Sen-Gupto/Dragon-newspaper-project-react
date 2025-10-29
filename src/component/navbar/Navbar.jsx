@@ -15,7 +15,8 @@ const Navbar = () => {
             <section className='flex justify-between items-center my-10 p-3'>
                 <div className='nav-start'>{
                      detail&& detail.email
-                     }</div>
+                     }{import.meta.env.VITE_name}</div>
+                     
                 <nav className='nav-main flex gap-4 text-base-200'>
                      
                   <NavLink to={'/'}>Home</NavLink>

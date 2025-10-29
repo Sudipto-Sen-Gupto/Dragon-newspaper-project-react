@@ -13,7 +13,8 @@ const Login = () => {
         const email=e.target.email.value;
         const pass=e.target.pass.value;
         console.log(email,pass);
-        userLogin(email,pass).then(res=>{toast("Log in to our website")
+        userLogin(email,pass).then(res=>{
+          toast("Log in to our website")
           navigate(`${location.state?location.state:"/"}`)
         }).catch(err=>console.log(err))
   }
